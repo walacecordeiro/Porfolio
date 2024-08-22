@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import MouseMove from "@/components/_components/MouseMove";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,19 +10,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
- // Seleciona a div que você quer que acompanhe o mouse
- const div = document.querySelector(".minha-div");
-
- // Adiciona um listener para o evento mousemove
- document.addEventListener("mousemove", (event) => {
-  // Atualiza a posição da div para as coordenadas do mouse
-  div.style.left = event.clientX + "px";
-  div.style.top = event.clientY + "px";
- });
-
  return (
   <html lang="pt-br">
-   <body className={`${inter.className} bg-red-500`}>{children}</body>
+   <body className={`${inter.className} bg-[#0F172A] overflow-hidden`}>
+    <MouseMove />
+    {children}
+   </body>
   </html>
  );
 }
