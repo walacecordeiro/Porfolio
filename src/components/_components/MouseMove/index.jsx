@@ -19,8 +19,9 @@ function MouseMove() {
 
  return (
   <div
+   className="hidden lg:block"
    style={{
-    position: "absolute",
+    position: "fixed",
     zIndex: -1,
     left: `${position.x - 600}px`,
     top: `${position.y - 600}px`,
