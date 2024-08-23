@@ -1,13 +1,7 @@
-import AboutPage from "./@about/page";
-import ExperiencePage from "./@experience/page";
-import ProjectsPage from "./@projetos/page";
-
 export default function Home() {
  return (
   <main>
-   <AboutPage />
-   <ExperiencePage />
-   <ProjectsPage />
+   <h1>Conteúdo inicial aqui</h1>
   </main>
  );
 }
