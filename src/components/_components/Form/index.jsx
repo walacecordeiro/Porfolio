@@ -17,7 +17,7 @@ export default function Form() {
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [message, setMessage] = useState("");
- const closeForm = document.getElementById("closeForm");
+ const closeForm = document.getElementById("closeSheet");
 
  const { toast } = useToast();
 
@@ -54,7 +54,7 @@ export default function Form() {
      setEmail("");
      setMessage("");
      setSending(false);
-     clickCloseForm();
+     handleCloseForm();
     })
     .catch((err) => {
      console.log("ERRO: ", err);
@@ -63,7 +63,7 @@ export default function Form() {
   }
  }
 
- function clickCloseForm() {
+ function handleCloseForm() {
   if (closeForm) {
    closeForm.click();
   }
