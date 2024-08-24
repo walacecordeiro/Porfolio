@@ -15,7 +15,7 @@ export default function MobileNavigation() {
       <RxHamburgerMenu className="w-5 h-5 text-primary" />
      </span>
     </SheetTrigger>
-    <SheetContent>
+    <SheetContent className="w-full">
      <Navigation />
     </SheetContent>
    </Sheet>
