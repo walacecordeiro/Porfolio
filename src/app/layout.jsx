@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Navigation from "@/components/_components/Navigation";
 import { Toaster } from "@/components/ui/toaster";
+import MobileNavigation from "@/components/_components/MobileNavigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,9 +33,10 @@ export default function RootLayout({ children }) {
       Criando interfaces que encantam <br />e experiências que inspiram.
      </p>
 
-     <Navigation />
+     <Navigation displayMobile="hidden" displayDesktop="block" />
+     <MobileNavigation />
 
-     <ul className="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
+     {/* <ul className="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
       <li className=" text-xs shrink-0">
        <Link
         className="block hover:text-slate-200"
@@ -61,7 +63,7 @@ export default function RootLayout({ children }) {
         <FaLinkedin className="w-6 h-6" />
        </Link>
       </li>
-     </ul>
+     </ul> */}
     </header>
 
     <div className="pt-24 lg:py-24">{children}</div>
