@@ -20,7 +20,7 @@ export default function ItemListLink({ innerText, href }) {
     <li>
      <Link
       scroll={false}
-      className="group flex items-center py-3"
+      className="group flex items-center py-3 lg:w-fit"
       href={href}
       onClick={handleCloseSheetOnClick} // Adiciona o evento de clique
      >
@@ -42,7 +42,7 @@ export default function ItemListLink({ innerText, href }) {
     <li>
      <Link
       scroll={false}
-      className="group flex items-center py-3"
+      className="group flex items-center py-3 lg:w-fit"
       href={href}
       onClick={handleCloseSheetOnClick} // Adiciona o evento de clique
      >

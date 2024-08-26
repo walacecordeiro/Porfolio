@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import MouseMove from "@/components/_components/MouseMove";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Navigation from "@/components/_components/Navigation";
 import { Toaster } from "@/components/ui/toaster";
 import MobileNavigation from "@/components/_components/MobileNavigation";
@@ -35,35 +34,6 @@ export default function RootLayout({ children }) {
 
      <Navigation displayMobile="hidden" displayDesktop="block" />
      <MobileNavigation />
-
-     {/* <ul className="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
-      <li className=" text-xs shrink-0">
-       <Link
-        className="block hover:text-slate-200"
-        href="https://github.com/walacecordeiro"
-        target="_blank"
-        rel="noreferrer noopener"
-        aria-label="GitHub (vai abrir em uma nova aba)"
-        title="GitHub"
-       >
-        <span className="sr-only">GitHub</span>
-        <FaGithub className="w-6 h-6" />
-       </Link>
-      </li>
-      <li className=" text-xs shrink-0">
-       <Link
-        className="block hover:text-slate-200"
-        href="https://www.linkedin.com/in/walace-cordeiro-dos-santos/"
-        target="_blank"
-        rel="noreferrer noopener"
-        aria-label="LinkedIn (vai abrir em uma nova aba)"
-        title="LinkedIn"
-       >
-        <span className="sr-only">LinkedIn</span>
-        <FaLinkedin className="w-6 h-6" />
-       </Link>
-      </li>
-     </ul> */}
     </header>
 
     <div className="pt-24 lg:py-24">{children}</div>

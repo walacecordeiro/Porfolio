@@ -14,7 +14,8 @@ export default function Navigation({ displayMobile, displayDesktop }) {
   <nav className={`${displayMobile} lg:${displayDesktop}`} aria-label="In-page jump links">
    <ul className="flex flex-col mt-4 w-full">
     <ItemListLink href="/" innerText="Início" />
-    <ItemListLink href="/experiencia" innerText="Esperiência" />
+    <ItemListLink href="/formacao" innerText="Formação" />
+    {/* <ItemListLink href="/experiencia" innerText="Esperiência" /> */}
     <ItemListLink href="/projetos" innerText="Projetos" />
     <ItemListLink href="/sobre" innerText="Sobre" />
 
