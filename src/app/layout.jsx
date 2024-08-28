@@ -25,18 +25,18 @@ export default function RootLayout({ children }) {
      <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
       <Link href="/">Walace Cordeiro</Link>
      </h1>
-     <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-      UX/UI Designer | Front-end Developer
+     <h2 className="mt-3 text-md font-medium tracking-tight text-slate-200 sm:text-xl">
+      Mobile Developer | Front-end Developer
      </h2>
-     <p className="mt-4 max-w-xs leading-normal">
-      Criando interfaces que encantam <br />e experiências que inspiram.
+     <p className="mt-4 text-sm max-w-sm leading-normal sm:text-base">
+      Transformar ideias em código para entregar a melhor experiência ao mundo.
      </p>
 
      <Navigation displayMobile="hidden" displayDesktop="block" />
      <MobileNavigation />
     </header>
 
-    <div className="pt-24 lg:py-24">{children}</div>
+    <div className="pt-10 lg:pt-24">{children}</div>
 
     <Toaster />
    </body>

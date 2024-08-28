@@ -36,7 +36,7 @@ export default function Card({
        <span>
         {innerTitle}
         {href != "" && (
-         <MdOutlineReadMore className="animate-ping-slow inline-block h-auto w-6 shrink-0 transition-all group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 ml-4 translate-y-px lg:animate-none lg:ml-1" />
+         <MdOutlineReadMore className="animate-pulse inline-block h-auto w-6 shrink-0 transition-all group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 ml-1 translate-y-px lg:animate-none" />
         )}
         {innerSubTitle && <p className="text-slate-500">{innerSubTitle}</p>}
        </span>
