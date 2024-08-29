@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { handleCloseSheetOnClick } from "../../utils/handleCloseSheetOnClick";
+import { handleClickComponent } from "../../utils/handleClickComponent";
 
 export default function ItemListLink({ innerText, href }) {
  const pathName = usePathname();
 
- handleCloseSheetOnClick();
+ const handleCloseSheet = () => {
+  handleClickComponent("closeSheet");
+ };
 
  return (
   <>
@@ -15,7 +17,7 @@ export default function ItemListLink({ innerText, href }) {
       scroll={false}
       className="group flex items-center py-3 lg:w-fit"
       href={href}
-      onClick={handleCloseSheetOnClick} // Adiciona o evento de clique
+      onClick={handleCloseSheet}
      >
       <span
        className={`nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover:transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none ${
@@ -37,7 +39,7 @@ export default function ItemListLink({ innerText, href }) {
       scroll={false}
       className="group flex items-center py-3 lg:w-fit"
       href={href}
-      onClick={handleCloseSheetOnClick} // Adiciona o evento de clique
+      onClick={handleCloseSheet}
      >
       <span
        className={`nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover:transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none ${
