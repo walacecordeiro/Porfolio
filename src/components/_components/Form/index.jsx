@@ -10,6 +10,7 @@ import ButtonPrimary from "../ButtonPrimary";
 
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 export default function Form() {
@@ -19,6 +20,7 @@ export default function Form() {
  const [message, setMessage] = useState("");
 
  const { toast } = useToast();
+ const router = useRouter();
 
  function sendEmail(e) {
   e.preventDefault();
@@ -43,11 +45,21 @@ export default function Form() {
    emailjs
     .send("service_va3czvz", "template_mbnlzb3", templateParams, "YKPKbHpb5Is_YTqTW")
     .then(() => {
+     router.push("/projetos");
      toast({
       variant: "primary",
-      title: "Sua mensagem foi enviada com sucesso!",
-      description: "Entrarei em contato em breve.",
-      action: <ToastAction altText="Ok entendi">Ok entendi</ToastAction>,
+      title: "Mensagem enviada, Entrarei em contato em breve!",
+      description: "Continue navegando e conhecendo mais minhas habilidades.",
+      action: (
+       <ToastAction
+        altText="Ok entendi"
+        onClick={() => {
+         router.push("/contato");
+        }}
+       >
+        Enviar outra
+       </ToastAction>
+      ),
      });
      setName("");
      setEmail("");
