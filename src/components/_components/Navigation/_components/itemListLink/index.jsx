@@ -1,18 +1,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { handleCloseSheetOnClick } from "../../utils/handleCloseSheetOnClick";
 
 export default function ItemListLink({ innerText, href }) {
  const pathName = usePathname();
 
- const handleCloseSheetOnClick = () => {
-  // Encontra o elemento alvo pelo ID
-  const closeSheet = document.getElementById("closeSheet");
-
-  // Se o elemento for encontrado, simula um clique nele
-  if (closeSheet) {
-   closeSheet.click();
-  }
- };
+ handleCloseSheetOnClick();
 
  return (
   <>

@@ -1,15 +1,15 @@
 "use client";
 
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-
-import Form from "../Form";
 import Link from "next/link";
-import MouseMove from "../MouseMove";
 import ItemListLink from "./_components/itemListLink";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import { handleCloseSheetOnClick } from "./utils/handleCloseSheetOnClick";
+
 export default function Navigation({ displayMobile, displayDesktop }) {
+ handleCloseSheetOnClick();
+
  return (
   <nav className={`${displayMobile} lg:${displayDesktop}`} aria-label="In-page jump links">
    <ul className="flex flex-col mt-4 w-full">
@@ -19,29 +19,14 @@ export default function Navigation({ displayMobile, displayDesktop }) {
     <ItemListLink href="/projetos" innerText="Projetos" />
     <ItemListLink href="/sobre" innerText="Sobre" />
 
-    <li className="self-center lg:self-start">
-     <Sheet>
-      <SheetTrigger className="mt-8">
-       <div>
-        <span className="before:block before:absolute before:-inset-0 before:-skew-x-12 before:rounded-sm before:opacity-0 before:hover:opacity-100 before:border before:border-primary relative inline-block before:transition-all before:hover:translate-x-1 before:hover:translate-y-1">
-         <div className="bg-black/50 text-primary rounded-sm py-4 px-4 lg:px-12 -skew-x-12 transition-all hover:bg-black hover:-translate-x-1 hover:-translate-y-1">
-          Vamos conversar?
-         </div>
-        </span>
+    <li className="self-center lg:self-start mt-8">
+     <Link scroll={false} href="/contato" onClick={handleCloseSheetOnClick}>
+      <span className="before:block before:absolute before:-inset-0 before:-skew-x-12 before:rounded-sm before:opacity-0 before:hover:opacity-100 before:border before:border-primary relative inline-block before:transition-all before:hover:translate-x-1 before:hover:translate-y-1">
+       <div className="bg-black/50 text-primary rounded-sm py-4 px-4 lg:px-12 -skew-x-12 transition-all hover:bg-black hover:-translate-x-1 hover:-translate-y-1">
+        Vamos conversar?
        </div>
-      </SheetTrigger>
-      <SheetContent side="bottom" className="flex items-center h-fit lg:h-screen">
-       <div className="flex flex-col w-[95%] h-fit lg:w-2/5 mx-auto">
-        <MouseMove />
-
-        <SheetHeader>
-         <SheetTitle className="self-start">Envie um e-mail</SheetTitle>
-        </SheetHeader>
-
-        <Form />
-       </div>
-      </SheetContent>
-     </Sheet>
+      </span>
+     </Link>
     </li>
 
     <ul

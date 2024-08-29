@@ -17,7 +17,6 @@ export default function Form() {
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [message, setMessage] = useState("");
- const closeForm = document.getElementById("closeSheet");
 
  const { toast } = useToast();
 
@@ -28,7 +27,7 @@ export default function Form() {
    toast({
     variant: "destructive",
     title: "Preencha todos os campos!",
-    description: "Preencha com o e-mail que mais usa.",
+    description: "Use o e-mail que você mais utiliza.",
     action: <ToastAction altText="Ok entendi">Ok</ToastAction>,
    });
    return;
@@ -54,7 +53,6 @@ export default function Form() {
      setEmail("");
      setMessage("");
      setSending(false);
-     handleCloseForm();
     })
     .catch((err) => {
      console.log("ERRO: ", err);
@@ -63,17 +61,11 @@ export default function Form() {
   }
  }
 
- function handleCloseForm() {
-  if (closeForm) {
-   closeForm.click();
-  }
- }
-
  return (
   <>
    {/* Formulário */}
-   <form onSubmit={sendEmail} className="flex flex-col">
-    <div className="mb-4">
+   <form onSubmit={sendEmail} className="group/list flex flex-col">
+    <div className="group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 flex flex-col gap-2 mb-4">
      <Label htmlFor="name">Nome</Label>
      <Input
       type="text"
@@ -85,7 +77,7 @@ export default function Form() {
       className="bg-black/50 border-none focus-visible:ring-primary"
      />
     </div>
-    <div className="mb-4">
+    <div className="group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 flex flex-col gap-2 mb-4">
      <Label htmlFor="email">E-mail</Label>
      <Input
       type="email"
@@ -97,7 +89,7 @@ export default function Form() {
       className="bg-black/50 border-none focus-visible:ring-primary"
      />
     </div>
-    <div className="mb-4">
+    <div className="group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 flex flex-col gap-2 mb-4">
      <Label htmlFor="message">Mensagem</Label>
      <Textarea
       id="message"
@@ -108,21 +100,19 @@ export default function Form() {
      />
     </div>
 
-    <div className="flex flex-col mt-4 text-center">
+    <div className="flex flex-col items-center justify-center gap-4 mt-4 lg:flex-row lg:justify-between">
      <ButtonPrimary
       type="submit"
       className="self-center"
       innerText={isSending ? "Enviando..." : "Enviar Mensagem"}
      />
-
-     <h6 className="my-2">Ou</h6>
-
+     Ou
      <Link
       href="https://contate.me/whatsapp-walace"
       target="_blank"
-      className="transition-all text-blue-500 hover:text-blue-700"
+      className="flex items-center gap-2 transition-all text-blue-500 hover:text-blue-700"
      >
-      <IoLogoWhatsapp className="w-5 h-auto inline-block mr-2 text-inherit" />
+      <IoLogoWhatsapp className="w-5 h-auto inline-block text-inherit" />
       Chamar no WhatsApp
      </Link>
     </div>
