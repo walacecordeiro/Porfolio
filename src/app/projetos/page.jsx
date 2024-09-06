@@ -17,14 +17,14 @@ export default function ProjectsPage() {
       innerImage="/images/example.jpg"
       innerTitle="Primeiro Projeto Exemplo"
       innerDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci libero sint alias officiis voluptas asperiores ab quibusdam et fuga placeat accusamus dolores suscipit quam perferendis excepturi labore, tempora repellat?"
-      tags={["React", "Wordpress"]}
+      tags={["React", "NextJs", "Tailwind CSS"]}
      />
      <Card
       href="#"
       innerImage="/images/example.jpg"
       innerTitle="Segundo Projeto Exemplo"
       innerDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci libero sint alias officiis voluptas asperiores ab quibusdam et fuga placeat accusamus dolores suscipit quam perferendis excepturi labore, tempora repellat?"
-      tags={["React", "Wordpress"]}
+      tags={["React", "NextJs", "Tailwind CSS"]}
      />
     </ul>
     <div className="mt-12">
