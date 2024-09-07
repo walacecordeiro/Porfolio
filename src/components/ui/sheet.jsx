@@ -17,7 +17,7 @@ const SheetPortal = SheetPrimitive.Portal;
 const SheetOverlay = React.forwardRef(({ className, ...props }, ref) => (
  <SheetPrimitive.Overlay
   className={cn(
-   "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+   "fixed inset-0 z-50 bg-black data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
    className
   )}
   {...props}
@@ -52,9 +52,8 @@ const SheetContent = React.forwardRef(({ side = "right", className, children, ..
   <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
    <SheetPrimitive.Close
     id="closeSheet"
-    className="absolute right-3 top-5 rounded-sm opacity-100 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary"
+    className="absolute right-3 top-5 rounded-sm opacity-100 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-secondary"
    >
-    {/* <Cross2Icon className="h-5 w-5" /> */}
     <span className="bg-destructive py-2 px-3 rounded-md text-white">Fechar</span>
    </SheetPrimitive.Close>
    {children}

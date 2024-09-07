@@ -76,8 +76,8 @@ export default function Form() {
  return (
   <>
    {/* Formulário */}
-   <form onSubmit={sendEmail} className="group/list flex flex-col">
-    <div className="group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 flex flex-col gap-2 mb-4">
+   <form onSubmit={sendEmail} className="flex flex-col">
+    <div className="   flex flex-col gap-2 mb-4">
      <Label htmlFor="name">Nome</Label>
      <Input
       type="text"
@@ -89,7 +89,7 @@ export default function Form() {
       className="bg-black/50 border-none focus-visible:ring-primary"
      />
     </div>
-    <div className="group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 flex flex-col gap-2 mb-4">
+    <div className="flex flex-col gap-2 mb-4">
      <Label htmlFor="email">E-mail</Label>
      <Input
       type="email"
@@ -101,7 +101,7 @@ export default function Form() {
       className="bg-black/50 border-none focus-visible:ring-primary"
      />
     </div>
-    <div className="group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 flex flex-col gap-2 mb-4">
+    <div className="flex flex-col gap-2 mb-4">
      <Label htmlFor="message">Mensagem</Label>
      <Textarea
       id="message"

@@ -2,7 +2,14 @@
 
 import Navigation from "../Navigation";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+ Sheet,
+ SheetContent,
+ SheetDescription,
+ SheetHeader,
+ SheetTitle,
+ SheetTrigger,
+} from "@/components/ui/sheet";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -16,7 +23,11 @@ export default function MobileNavigation() {
      </span>
     </SheetTrigger>
     <SheetContent className="w-full">
-     <Navigation />
+     <SheetHeader className="flex justify-start items-start">
+      <SheetTitle className="hidden"></SheetTitle>
+      <SheetDescription className="hidden"></SheetDescription>
+      <Navigation />
+     </SheetHeader>
     </SheetContent>
    </Sheet>
   </div>

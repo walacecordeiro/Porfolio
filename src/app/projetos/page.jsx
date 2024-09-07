@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Card from "../../components/_components/Card";
-import { GoProjectSymlink } from "react-icons/go";
+import { data } from "./data";
+import TextLink from "@/components/_components/TextLink";
 
 export default function ProjectsPage() {
  return (
@@ -12,34 +12,18 @@ export default function ProjectsPage() {
    </div>
    <div>
     <ul className="group/list">
-     <Card
-      href="#"
-      innerImage="/images/example.jpg"
-      innerTitle="Primeiro Projeto Exemplo"
-      innerDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci libero sint alias officiis voluptas asperiores ab quibusdam et fuga placeat accusamus dolores suscipit quam perferendis excepturi labore, tempora repellat?"
-      tags={["React", "NextJs", "Tailwind CSS"]}
-     />
-     <Card
-      href="#"
-      innerImage="/images/example.jpg"
-      innerTitle="Segundo Projeto Exemplo"
-      innerDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae adipisci libero sint alias officiis voluptas asperiores ab quibusdam et fuga placeat accusamus dolores suscipit quam perferendis excepturi labore, tempora repellat?"
-      tags={["React", "NextJs", "Tailwind CSS"]}
-     />
+     {data.map((project) => (
+      <Card
+       key={project.id}
+       href={project.href}
+       innerImage={project.images[0]}
+       innerTitle={project.innerTitle}
+       innerDescription={project.innerDescription}
+       tags={project.tags}
+      />
+     ))}
     </ul>
-    <div className="mt-12">
-     <Link
-      className="inline-flex items-center font-medium leading-tight text-slate-200 group"
-      href="#"
-     >
-      <span>
-       <span className="border-b border-transparent pb-px group-hover:transition-all group-hover:border-primary">
-        Ver todos os projetos
-       </span>
-       <GoProjectSymlink className="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-all group-hover:translate-x-2 group-focus-visible:translate-x-2" />
-      </span>
-     </Link>
-    </div>
+    <TextLink innerText="Ver todos os projetos"/>
    </div>
   </section>
  );
