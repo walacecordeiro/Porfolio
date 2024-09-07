@@ -14,7 +14,7 @@ export default function AboutPage() {
        width={800}
        height={0}
        alt="Pequena imagem do projeto"
-       className="h-fit rounded-sm -skew-x-0 grayscale-0 transition-all hover:grayscale-0 hover:-translate-x-1 hover:-translate-y-1 lg:grayscale"
+       className="h-fit rounded-sm -skew-x-0 transition-all hover:-translate-x-1 hover:-translate-y-1"
       />
      </span>
      <p>
