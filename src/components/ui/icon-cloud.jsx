@@ -1,4 +1,5 @@
-"use client";;
+"use client";
+
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
@@ -15,15 +16,19 @@ export const cloudProps = {
   },
   options: {
     reverse: false,
+    freezeActive: true,
     depth: 1,
-    wheelZoom: false,
+    wheelZoom: true,
     imageScale: 2,
     activeCursor: "pointer",
     tooltip: "native",
     initial: [0.1, -0.1],
-    clickToFront: 500,
+    clickToFront: 1000,
     tooltipDelay: 0,
     outlineColour: "#0000",
+    shadow: "#000000",
+    shadowOffset: [5,5],
+    shadowBlur: 10,
     maxSpeed: 0.04,
     minSpeed: 0.02,
     // dragControl: true,
@@ -64,7 +69,7 @@ export default function IconCloud({
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"));
+      renderCustomIcon(icon, theme || "dark"));
   }, [data, theme]);
 
   return (
