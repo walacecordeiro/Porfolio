@@ -45,7 +45,7 @@ export default function Header({ gitHubUserName }) {
       </h2>
       <Paragraph
         className="mt-4 text-sm max-w-sm leading-normal sm:text-base"
-        text={profileData.bio}
+        text={profileData?.bio}
       />
 
       <Navigation displayMobile="hidden" displayDesktop="block" />
