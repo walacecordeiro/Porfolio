@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     className={`${inter.className} dark w-[88%] overflow-y-scroll mx-auto py-12 bg-background text-slate-400 lg:grid lg:grid-cols-2 lg:py-0 lg:w-4/5`}
    >
     <MouseMove />
-    <Header />
+    <Header gitHubUserName="walacecordeiro"/>
 
     <div className="pt-10 lg:pt-24">{children}</div>
 
