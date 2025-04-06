@@ -3,18 +3,17 @@
 Este projeto é um site de portfólio pessoal desenvolvido com `React e Next.js`. Ele exibe uma lista de ícones representando diferentes tecnologias e ferramentas que utilizo no meu trabalho. O layout é responsivo e projetado para ser visualmente atraente.
 
 <p align="center">
-  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-technologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-clone-e-use-como-template">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-contato">Contato</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#technologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#clone-e-use-como-template">Clonar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#contato">Contato</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#licença">Licença</a>
 </p>
 
 <br>
 
 <p align="center">
-  <img alt="imagem do projeto" src="./.github/preview.png" width="500" height="auto">
+  <img alt="imagem do projeto" src="./.github/preview.png" style="border-radius: 10px; width: 80%; height: auto;"/>
 </p>
 
 ### Funcionalidades
@@ -48,7 +47,7 @@ Sinta-se à vontade para fazer um clone deste projeto e utilizá-lo como templat
    cd walace-cordeiro
    ```
 
-## Variáveis de Ambiente
+### Variáveis de Ambiente
 
 Este projeto utiliza uma variável de ambiente chamada `NEXT_PUBLIC_GITHUB_TOKEN`, armazenada no arquivo `.env.local`. O prefixo `NEXT_PUBLIC_` é obrigatório em projetos Next.js para que variáveis sejam acessíveis no lado do cliente.
 
@@ -93,7 +92,7 @@ Para dúvidas ou sugestões, entre em contato:
 
 <br>
 
-## :memo: Licença
+## Licença
 
 Este projeto está licenciado sob a ![MIT](https://img.shields.io/badge/license-MIT-33333). Sinta-se à vontade para usar, modificar e distribuir este projeto.
 
