@@ -36,7 +36,7 @@ export default function Header({ gitHubUserName }) {
   if (!profileData) return <div>Carregando...</div>;
 
   return (
-    <header className="lg:sticky lg:top-0 lg:h-screen lg:py-24">
+    <header className="lg:sticky lg:top-0 lg:h-screen lg:py-24 flex flex-col justify-center">
       <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
         <Link href="/">{profileData?.name}</Link>
       </h1>

@@ -43,7 +43,7 @@ const slugs = [
 
 export default function Home() {
  return (
-  <main>
+  <main className="self-center">
    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-full bg-white/5 p-5">
     <IconCloud iconSlugs={slugs} />
    </div>

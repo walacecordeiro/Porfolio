@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <MouseMove />
     <Header gitHubUserName="walacecordeiro"/>
 
-    <div className="pt-10 lg:pt-24">{children}</div>
+    <div className="pt-10 lg:pt-24 flex justify-center items-center">{children}</div>
 
     <Toaster />
    </body>
