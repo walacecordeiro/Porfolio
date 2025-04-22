@@ -120,7 +120,7 @@ export default function Form() {
      />
      Ou
      <Link
-      href="https://contate.me/whatsapp-walace"
+      href="https://wa.me/5521971650722"
       target="_blank"
       className="flex items-center gap-2 transition-all text-blue-500 hover:text-blue-700"
      >
