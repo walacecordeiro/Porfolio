@@ -11,9 +11,7 @@ export default function Navigation({ displayMobile, displayDesktop }) {
    <ul className="flex flex-col mt-4 w-full">
     <ItemListLink href="/" innerText="Início" />
     <ItemListLink href="/formacao" innerText="Formação" />
-    {/* <ItemListLink href="/experiencia" innerText="Esperiência" /> */}
     <ItemListLink href="/projetos" innerText="Projetos" />
-    <ItemListLink href="/sobre" innerText="Sobre" />
     <ItemListLink href="/contato" innerText="Contato" />
 
     <ul
