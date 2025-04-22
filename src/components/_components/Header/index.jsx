@@ -47,7 +47,7 @@ export default function Header({ gitHubUserName }) {
           alt="Pequena imagem do projeto"
           className="h-fit rounded-full"
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center items-center md:items-start">
           <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-3xl">
             {profileData?.name}
           </h1>
@@ -57,7 +57,7 @@ export default function Header({ gitHubUserName }) {
         </div>
       </Link>
       <Paragraph
-        className="mt-4 text-sm max-w-sm leading-normal sm:text-base"
+        className="mt-4 text-center text-sm max-w-sm leading-normal sm:text-base md:text-start"
         text={profileData?.bio}
       />
 
