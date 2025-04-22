@@ -1,6 +1,5 @@
 const GITHUB_API_URL = 'https://api.github.com';
 const TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
-console.log(TOKEN)
 
 // Função para buscar meus dados
 export const fetchUserProfile = async (username) => {

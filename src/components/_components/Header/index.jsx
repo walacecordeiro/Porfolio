@@ -10,19 +10,17 @@ import { fetchUserRepos, fetchUserProfile } from '@/services/github';
 
 export default function Header({ gitHubUserName }) {
   const [profileData, setProfileData] = useState(null);
-  const [reposData, setReposData] = useState([]);
+  // const [reposData, setReposData] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  console.log(profileData)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const profile = await fetchUserProfile(gitHubUserName);
-        const repos = await fetchUserRepos(gitHubUserName);
+        // const repos = await fetchUserRepos(gitHubUserName);
         
         setProfileData(profile);
-        setReposData(repos);
+        // setReposData(repos);
       } catch (error) {
         console.error('Erro ao buscar dados do GitHub:', error);
       } finally {
