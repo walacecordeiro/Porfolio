@@ -1,13 +1,37 @@
+"use client";
+
 import Link from "next/link";
 import Navigation from "../Navigation";
 import MobileNavigation from "../MobileNavigation";
 import { Paragraph } from "../Paragraph";
 import Image from "next/image";
-import { fetchUserProfile } from "@/services/github";
 
-export default async function Header({ gitHubUserName }) {
-  const profileData = await fetchUserProfile(gitHubUserName)
-  
+import { useEffect, useState } from "react";
+import { fetchUserRepos, fetchUserProfile } from "@/services/github";
+
+export default function Header({ gitHubUserName }) {
+  const [profileData, setProfileData] = useState(null);
+  // const [reposData, setReposData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const profile = await fetchUserProfile(gitHubUserName);
+        // const repos = await fetchUserRepos(gitHubUserName);
+
+        setProfileData(profile);
+        // setReposData(repos);
+      } catch (error) {
+        console.error("Erro ao buscar dados do GitHub:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [gitHubUserName]);
+
   if (!profileData) return <div>Carregando...</div>;
 
   return (
