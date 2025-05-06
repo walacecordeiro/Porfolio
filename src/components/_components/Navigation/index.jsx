@@ -5,6 +5,8 @@ import ItemListLink from "./_components/itemListLink";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ButtonPrimary from "../ButtonPrimary";
+import { LightMode } from "../LightMode";
+import { Separator } from "@radix-ui/react-dropdown-menu";
 
 export default function Navigation({ displayMobile, displayDesktop }) {
   return (
@@ -17,10 +19,14 @@ export default function Navigation({ displayMobile, displayDesktop }) {
         <ItemListLink href="/formacao" innerText="Formação" />
         <ItemListLink href="/projetos" innerText="Projetos" />
         <ItemListLink href="/contato" innerText="Contato" />
-        <ButtonPrimary
-          innerText="Download CV"
-          pdfDownload="/files/curriculo_walace_cordeiro.pdf"
-        />
+
+        <div className="flex gap-4 items-center">
+          <ButtonPrimary
+            innerText="Download CV"
+            pdfDownload="/files/curriculo_walace_cordeiro.pdf"
+          />
+          <LightMode />
+        </div>
 
         <ul className="flex mt-8 gap-5 lg:ml-1" aria-label="Social media">
           <li className="text-xs shrink-0 transition-all hover:scale-110">

@@ -16,9 +16,14 @@ export function LightMode({ className }) {
 
   return (
     <div className={`${className} z-50`}>
-      <Button onClick={() => toggleMode()} variant="outline" size="icon">
-        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Button
+        onClick={() => toggleMode()}
+        variant="ghost"
+        className="shadow-md shadow-background"
+        size="icon"
+      >
+        <Sun className="transition-all animate-[spin_10s_linear_infinite] dark:hidden" />
+        <Moon className="transition-all animate-[bounce_5s_linear_infinite] -mb-2 hidden dark:block" />
       </Button>
     </div>
   );

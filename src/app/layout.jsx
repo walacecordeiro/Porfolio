@@ -4,7 +4,6 @@ import MouseMove from "@/components/_components/MouseMove";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/_components/Header";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import { LightMode } from "@/components/_components/LightMode";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,8 +31,6 @@ export default function RootLayout({ children }) {
           <div className="pt-10 flex justify-center items-center">
             {children}
           </div>
-
-          <LightMode className="fixed bottom-6 right-4" />
 
           <Toaster />
         </ThemeProvider>
