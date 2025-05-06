@@ -3,7 +3,8 @@ import "./globals.css";
 import MouseMove from "@/components/_components/MouseMove";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/_components/Header";
-import { Suspense } from "react";
+import { ThemeProvider } from "@/components/theme-provider/theme-provider";
+import { LightMode } from "@/components/_components/LightMode";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,17 +17,26 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body
-        className={`${inter.className} dark w-[88%] overflow-y-scroll mx-auto py-12 bg-background text-slate-400 lg:grid lg:grid-cols-2 lg:py-0 lg:w-4/5`}
+        className={`${inter.className} w-[88%] overflow-y-scroll mx-auto py-12 bg-background text-slate-400 lg:grid lg:grid-cols-2 lg:py-0 lg:w-4/5`}
       >
-        <MouseMove />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MouseMove />
 
-        <Header gitHubUserName="walacecordeiro" />
+          <Header gitHubUserName="walacecordeiro" />
 
-        <div className="pt-10 flex justify-center items-center">
-          {children}
-        </div>
+          <div className="pt-10 flex justify-center items-center">
+            {children}
+          </div>
 
-        <Toaster />
+          <LightMode className="fixed bottom-6 right-4" />
+
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

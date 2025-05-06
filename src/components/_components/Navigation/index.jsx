@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import ItemListLink from "./_components/itemListLink";
-// import image from "@/../public/files/curriculo_walace_cordeiro.pdf"
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ButtonPrimary from "../ButtonPrimary";
@@ -18,7 +17,10 @@ export default function Navigation({ displayMobile, displayDesktop }) {
         <ItemListLink href="/formacao" innerText="Formação" />
         <ItemListLink href="/projetos" innerText="Projetos" />
         <ItemListLink href="/contato" innerText="Contato" />
-        <ButtonPrimary innerText="Baixar CV" pdfDownload="/files/curriculo_walace_cordeiro.pdf"/>
+        <ButtonPrimary
+          innerText="Download CV"
+          pdfDownload="/files/curriculo_walace_cordeiro.pdf"
+        />
 
         <ul className="flex mt-8 gap-5 lg:ml-1" aria-label="Social media">
           <li className="text-xs shrink-0 transition-all hover:scale-110">
