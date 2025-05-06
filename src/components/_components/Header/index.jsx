@@ -4,11 +4,12 @@ import MobileNavigation from "../MobileNavigation";
 import { Paragraph } from "../Paragraph";
 import Image from "next/image";
 import { fetchUserProfile } from "@/services/github";
+import Loading from "@/app/loading";
 
 export default async function Header({ gitHubUserName }) {
-  const profileData = await fetchUserProfile(gitHubUserName)
-  
-  if (!profileData) return <div>Carregando...</div>;
+  const profileData = await fetchUserProfile(gitHubUserName);
+
+  if (!profileData) return <Loading />;
 
   return (
     <header className="lg:sticky lg:top-0 lg:h-screen lg:py-24 md:items-start flex flex-col justify-center items-center ">

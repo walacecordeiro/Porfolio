@@ -6,7 +6,7 @@ import { GoProjectSymlink } from "react-icons/go";
 
 export default function ProjectsPage() {
  return (
-  <SectionSticky title="Projetos em Destaque">
+  <SectionSticky title="Projetos em Destaque" className="lg:pt-14">
    <ul className="group/list">
     {data
      .filter((project) => project.highlight)

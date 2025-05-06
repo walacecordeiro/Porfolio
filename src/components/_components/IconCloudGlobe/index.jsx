@@ -9,49 +9,22 @@ const slugs = [
   "typescript",
   "python",
   "django",
-  "react",
   "nextdotjs",
+  "blazor",
+  "react",
   "git",
   "github",
   "figma",
 ];
-// const slugs = [
-//   "typescript",
-//   "javascript",
-//   "dart",
-//   "java",
-//   "react",
-//   "flutter",
-//   "android",
-//   "html5",
-//   "css3",
-//   "nodedotjs",
-//   "express",
-//   "nextdotjs",
-//   "prisma",
-//   "amazonaws",
-//   "postgresql",
-//   "firebase",
-//   "nginx",
-//   "vercel",
-//   "testinglibrary",
-//   "jest",
-//   "cypress",
-//   "docker",
-//   "git",
-//   "jira",
-//   "github",
-//   "gitlab",
-//   "visualstudiocode",
-//   "androidstudio",
-//   "sonarqube",
-//   "figma",
-// ];
 
 export function IconCloudGlobe() {
   const images = slugs.map(
     (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   );
 
-  return <IconCloud images={images} />;
+  return (
+    <div className="relative flex w-fit h-auto items-center justify-center overflow-hidden rounded-full bg-white/5 shadow-2xl shadow-background">
+      <IconCloud images={images} />
+    </div>
+  );
 }
