@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { BiRightIndent } from "react-icons/bi";
 import Tag from "../Tag/tag";
 import { Paragraph } from "../Paragraph";
 
@@ -12,7 +10,7 @@ export default function Card({
   innerDescription,
   tags,
 }) {
-  const previewDescription = targetDescription(innerDescription, 200);
+  const previewDescription = targetDescription(innerDescription, 120);
 
   function targetDescription(text, maxLength) {
     if (text.length > maxLength) {
@@ -46,9 +44,6 @@ export default function Card({
             <span className="w-full">
               <div className={`flex items-center ${!innerSubTitle && "pb-2"}`}>
                 {innerTitle}
-                {href != "" && (
-                  <BiRightIndent className="hidden h-auto w-6 shrink-0 transition-all group-hover/link:translate-x-full group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 ml-1 lg:block" />
-                )}
               </div>
               {innerSubTitle && (
                 <p className="text-slate-500 pb-2">{innerSubTitle}</p>
@@ -62,7 +57,7 @@ export default function Card({
             <Paragraph text={previewDescription} />
           )}
 
-          {tags && (
+          {tags.length > 0 &&(
             <ul className="mt-4 flex gap-2 flex-wrap">
               {tags.map((tag, index) => (
                 <li key={index}>
