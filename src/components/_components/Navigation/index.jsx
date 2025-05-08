@@ -6,7 +6,6 @@ import ItemListLink from "./_components/itemListLink";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ButtonPrimary from "../ButtonPrimary";
 import { LightMode } from "../LightMode";
-import { Separator } from "@radix-ui/react-dropdown-menu";
 
 export default function Navigation({ displayMobile, displayDesktop }) {
   return (

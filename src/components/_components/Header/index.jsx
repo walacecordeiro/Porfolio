@@ -25,16 +25,16 @@ export default async function Header({ gitHubUserName }) {
           className="h-fit rounded-full"
         />
         <div className="flex flex-col justify-center items-center md:items-start">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-3xl">
+          <h1 className="text-4xl font-bold tracking-tight text-title sm:text-3xl">
             {profileData?.name}
           </h1>
-          <h2 className="text-md opacity-80 font-medium tracking-tight text-slate-200 sm:text-md">
+          <h2 className="text-md opacity-80 font-medium tracking-tight text-title-foreground sm:text-md">
             {profileData?.location}
           </h2>
         </div>
       </Link>
       <Paragraph
-        className="mt-4 text-center text-sm max-w-sm leading-normal sm:text-base md:text-start"
+        className="mt-4 text-center text-sm text-paragraph max-w-sm leading-normal sm:text-base md:text-start"
         text={profileData?.bio}
       />
 

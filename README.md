@@ -28,6 +28,7 @@ Este projeto é um site de portfólio pessoal desenvolvido com `React e Next.js`
 ![TypeScript](https://img.shields.io/badge/-Typescript-333333?style=flat&logo=typescript)
 ![React](https://img.shields.io/badge/-React-333333?style=flat&logo=react)
 ![Next.js](https://img.shields.io/badge/-Next.js-333333?style=flat&logo=next.js)
+![Tailwind_css](https://img.shields.io/badge/-Tailwind_CSS-333333?style=flat&logo=tailwindcss)
 
 <br>
 
@@ -38,18 +39,18 @@ Sinta-se à vontade para fazer um clone deste projeto e utilizá-lo como templat
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/walace-cordeiro.git
+   git clone https://github.com/seu-usuario/Portfolio.git
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd walace-cordeiro
+   cd Portfolio
    ```
 
 ### Variáveis de Ambiente
 
-Este projeto utiliza uma variável de ambiente chamada `NEXT_PUBLIC_GITHUB_TOKEN`, armazenada no arquivo `.env.local`. O prefixo `NEXT_PUBLIC_` é obrigatório em projetos Next.js para que variáveis sejam acessíveis no lado do cliente.
+Este projeto utiliza variáveis de ambiente, armazenadas no arquivo `.env.local`. O prefixo `NEXT_PUBLIC_` é obrigatório em projetos Next.js para que variáveis sejam acessíveis no lado do cliente.
 
 ### Obtendo seu Token do GitHub
 
@@ -65,6 +66,7 @@ Este projeto utiliza uma variável de ambiente chamada `NEXT_PUBLIC_GITHUB_TOKEN
 
    ```dotenv
    NEXT_PUBLIC_GITHUB_TOKEN=seu_token_do_github_aqui
+   NEXT_PUBLIC_GITHUB_USER=seu_nome_de_usuario_do_github_aqui
    ```
 
 4. Instale as dependências:
