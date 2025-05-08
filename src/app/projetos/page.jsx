@@ -20,7 +20,7 @@ export default async function ProjectsPage() {
             return (
               <Card
                 key={repo.id}
-                href=""
+                href={repo.html_url}
                 innerDate={formatDate(repo.pushed_at)}
                 innerTitle={removeCaracteres(repo.name, ["_", "-", "."])}
                 innerDescription={repo.description}
