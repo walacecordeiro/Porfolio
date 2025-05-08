@@ -3,6 +3,7 @@ import Card from "../../components/_components/Card";
 import TextLink from "@/components/_components/TextLink";
 import { GoProjectSymlink } from "react-icons/go";
 import { fetchUserRepos } from "@/services/github";
+import { formatDate, removeCaracteres } from "../utils/shortFunctions";
 
 export default async function ProjectsPage() {
   const profileRepos = await fetchUserRepos(
@@ -16,13 +17,12 @@ export default async function ProjectsPage() {
           .filter((repo) => (repo.description != null) & (repo.private != true))
           .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
           .map((repo) => {
-            const localDate = new Date(repo.pushed_at).toLocaleDateString();
             return (
               <Card
                 key={repo.id}
                 href=""
-                innerDate={localDate}
-                innerTitle={repo.name}
+                innerDate={formatDate(repo.pushed_at)}
+                innerTitle={removeCaracteres(repo.name, ["_", "-", "."])}
                 innerDescription={repo.description}
                 tags={repo.topics}
               />
