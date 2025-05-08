@@ -19,7 +19,7 @@ export default async function formationPage() {
               tags={formation.tags}
             />
           ))}
-        <SectionSticky title="Cursos Complementares">
+        <SectionSticky title="Aprimoramento Profissional">
           {data
             .filter((formation) => formation.level === "curso")
             .map((formation) => (
