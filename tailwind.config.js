@@ -52,9 +52,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        title: {
-          DEFAULT: "hsla(var(--title))",
-          foreground: "hsla(var(--title-foreground))",
+        black_white: {
+          DEFAULT: "hsla(var(--black_white))",
+          foreground: "hsla(var(--black_white-foreground))",
         },
       },
       borderRadius: {

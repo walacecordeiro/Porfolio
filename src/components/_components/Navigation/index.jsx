@@ -30,7 +30,7 @@ export default function Navigation({ displayMobile, displayDesktop }) {
         <ul className="flex mt-8 gap-5 lg:ml-1" aria-label="Social media">
           <li className="text-xs shrink-0 transition-all hover:scale-110">
             <Link
-              className="block hover:text-slate-200"
+              className="block text-black_white-foreground hover:text-black_white"
               href="https://github.com/walacecordeiro"
               target="_blank"
               rel="noreferrer noopener"
@@ -43,7 +43,7 @@ export default function Navigation({ displayMobile, displayDesktop }) {
           </li>
           <li className="text-xs shrink-0 transition-all hover:scale-110">
             <Link
-              className="block hover:text-slate-200"
+              className="block text-black_white-foreground hover:text-black_white"
               href="https://www.linkedin.com/in/walace-cordeiro-dos-santos/"
               target="_blank"
               rel="noreferrer noopener"

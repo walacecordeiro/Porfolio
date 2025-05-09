@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { handleClickComponent } from "../../utils/handleClickComponent";
+import { handleClickComponent } from "../../../../../app/utils/handleClickComponent";
 
 export default function ItemListLink({ innerText, href }) {
  const pathName = usePathname();
@@ -20,13 +20,13 @@ export default function ItemListLink({ innerText, href }) {
       onClick={handleCloseSheet}
      >
       <span
-       className={`nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover:transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none ${
-        pathName === href ? "!w-16 !bg-slate-200" : ""
+       className={`nav-indicator mr-4 h-px w-8 bg-paragraph group-hover:transition-all group-hover:w-16 group-hover:bg-black_white group-focus-visible:w-16 group-focus-visible:bg-bg-primary motion-reduce:transition-none ${
+        pathName === href ? "!w-16 !bg-primary" : ""
        }`}
       ></span>
       <span
-       className={`nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200 ${
-        pathName === href ? "!text-slate-200" : ""
+       className={`nav-text text-xs font-bold uppercase tracking-widest text-paragraph group-hover:text-black_white  group-focus-visible:text-bg-primary ${
+        pathName === href ? "!text-black_white" : ""
        }`}
       >
        {innerText}
@@ -42,13 +42,13 @@ export default function ItemListLink({ innerText, href }) {
       onClick={handleCloseSheet}
      >
       <span
-       className={`nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover:transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none ${
-        pathName.startsWith(href) ? "!w-16 !bg-slate-200" : ""
+       className={`nav-indicator mr-4 h-px w-8 bg-paragraph group-hover:transition-all group-hover:w-16 group-hover:bg-black_white group-focus-visible:w-16 group-focus-visible:bg-bg-primary motion-reduce:transition-none ${
+        pathName.startsWith(href) ? "!w-16 !bg-primary" : ""
        }`}
       ></span>
       <span
-       className={`nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200 ${
-        pathName.startsWith(href) ? "!text-slate-200" : ""
+       className={`nav-text text-xs font-bold uppercase tracking-widest text-paragraph group-hover:text-black_white  group-focus-visible:text-bg-primary ${
+        pathName.startsWith(href) ? "!text-black_white" : ""
        }`}
       >
        {innerText}
