@@ -18,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        paragraph: "hsla(var(--paragraph))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -50,6 +51,10 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        title: {
+          DEFAULT: "hsla(var(--title))",
+          foreground: "hsla(var(--title-foreground))",
         },
       },
       borderRadius: {
