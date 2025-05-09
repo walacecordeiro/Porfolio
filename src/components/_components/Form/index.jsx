@@ -78,7 +78,7 @@ export default function Form() {
    {/* Formulário */}
    <form onSubmit={sendEmail} className="flex flex-col">
     <div className="   flex flex-col gap-2 mb-4">
-     <Label htmlFor="name">Nome</Label>
+     <Label htmlFor="name" className="text-black_white">Nome</Label>
      <Input
       type="text"
       id="name"
@@ -86,11 +86,11 @@ export default function Form() {
       onChange={(e) => setName(e.target.value)}
       value={name}
       autoComplete="name"
-      className="bg-black/50 border-none focus-visible:ring-primary"
+      className="bg-black_white/5 text-black_white border-none focus-visible:ring-primary"
      />
     </div>
     <div className="flex flex-col gap-2 mb-4">
-     <Label htmlFor="email">E-mail</Label>
+     <Label htmlFor="email" className="text-black_white">E-mail</Label>
      <Input
       type="email"
       id="email"
@@ -98,21 +98,21 @@ export default function Form() {
       onChange={(e) => setEmail(e.target.value)}
       value={email}
       autoComplete="email"
-      className="bg-black/50 border-none focus-visible:ring-primary"
+      className="bg-black_white/5 text-black_white border-none focus-visible:ring-primary"
      />
     </div>
     <div className="flex flex-col gap-2 mb-4">
-     <Label htmlFor="message">Mensagem</Label>
+     <Label htmlFor="message" className="text-black_white">Mensagem</Label>
      <Textarea
       id="message"
       placeholder="Mensagem, feedback, sugestões..."
       onChange={(e) => setMessage(e.target.value)}
       value={message}
-      className="resize-none h-36 bg-black/50 border-none focus-visible:ring-primary"
+      className="resize-none h-36 bg-black_white/5 text-black_white border-none focus-visible:ring-primary"
      />
     </div>
 
-    <div className="flex flex-col items-center justify-center gap-4 mt-4 lg:flex-row lg:justify-between">
+    <div className="flex flex-col items-center justify-center gap-4 mt-4 text-black_white-foreground lg:flex-row lg:justify-between">
      <ButtonPrimary
       type="submit"
       className="self-center"
@@ -122,7 +122,7 @@ export default function Form() {
      <Link
       href="https://wa.me/5521971650722"
       target="_blank"
-      className="flex items-center gap-2 transition-all text-blue-500 hover:text-blue-700"
+      className="flex items-center gap-2 transition-all text-primary/80 hover:text-primary hover:scale-105"
      >
       <IoLogoWhatsapp className="w-5 h-auto inline-block text-inherit" />
       Chamar no WhatsApp

@@ -4,7 +4,7 @@ export default function TextLink({ innerText, url = "#", target, className, chil
  return (
   <div className="my-12">
    <Link
-    className="inline-flex items-center font-medium leading-tight text-slate-200 group"
+    className="inline-flex items-center font-medium leading-tight text-black_white group"
     href={url}
     target={target}
    >
