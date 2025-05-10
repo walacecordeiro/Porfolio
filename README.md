@@ -13,7 +13,7 @@ Este projeto é um site de portfólio pessoal desenvolvido com `React e Next.js`
 <br>
 
 <p align="center">
-  <img alt="imagem do projeto" src="./.github/preview.png" style="border-radius: 10px; width: 80%; height: auto;"/>
+  <img alt="imagem do projeto" src="./public/files/preview.png" style="border-radius: 10px; width: 80%; height: auto;"/>
 </p>
 
 ### Funcionalidades
