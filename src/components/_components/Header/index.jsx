@@ -25,10 +25,10 @@ export default async function Header() {
           className="h-fit rounded-full"
         />
         <div className="flex flex-col justify-center items-center md:items-start">
-          <h1 className="text-4xl font-bold tracking-tight text-title sm:text-3xl">
+          <h1 className="text-4xl font-bold tracking-tight text-black_white sm:text-3xl">
             {profileData?.name}
           </h1>
-          <h2 className="text-md opacity-80 font-medium tracking-tight text-title-foreground sm:text-md">
+          <h2 className="text-md opacity-80 font-medium tracking-tight text-black_white-foreground sm:text-md">
             {profileData?.location}
           </h2>
         </div>

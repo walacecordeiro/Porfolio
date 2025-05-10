@@ -1,9 +1,9 @@
 import { SectionSticky } from "@/components/_components/SectionSticky";
-import Card from "../../components/_components/Card";
+import Card from "../../../components/_components/Card";
 import TextLink from "@/components/_components/TextLink";
 import { GoProjectSymlink } from "react-icons/go";
 import { fetchUserRepos } from "@/services/github";
-import { formatDate, removeCaracteres } from "../utils/shortFunctions";
+import { formatDate, removeCaracteres } from "../../utils/shortFunctions";
 
 export default async function ProjectsPage() {
   const profileRepos = await fetchUserRepos();

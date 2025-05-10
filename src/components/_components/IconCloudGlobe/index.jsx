@@ -23,7 +23,7 @@ export function IconCloudGlobe() {
   );
 
   return (
-    <div className="relative flex w-fit h-auto items-center justify-center overflow-hidden rounded-full bg-white/5 shadow-2xl shadow-background">
+    <div className="relative flex w-fit h-auto items-center justify-center overflow-hidden rounded-full bg-foreground/10 shadow-xl shadow-black/10">
       <IconCloud images={images} />
     </div>
   );
