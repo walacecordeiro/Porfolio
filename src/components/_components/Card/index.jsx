@@ -39,7 +39,6 @@ export default function Card({
             } flex items-baseline font-medium leading-tight text-slate-200 transition-all hover:text-teal-300 focus-visible:text-teal-300 group/link text-base`}
             href={href}
             scroll={false}
-            target="blank"
           >
             <div className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></div>
             <span className="w-full">

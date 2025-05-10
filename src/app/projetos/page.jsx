@@ -6,9 +6,7 @@ import { fetchUserRepos } from "@/services/github";
 import { formatDate, removeCaracteres } from "../utils/shortFunctions";
 
 export default async function ProjectsPage() {
-  const profileRepos = await fetchUserRepos(
-    process.env.NEXT_PUBLIC_GITHUB_USER
-  );
+  const profileRepos = await fetchUserRepos();
 
   return (
     <SectionSticky title="Projetos públicos" className="lg:pt-14">
@@ -20,7 +18,7 @@ export default async function ProjectsPage() {
             return (
               <Card
                 key={repo.id}
-                href={repo.html_url}
+                href={`/projetos/${repo.name}`}
                 innerDate={formatDate(repo.pushed_at)}
                 innerTitle={removeCaracteres(repo.name, ["_", "-", "."])}
                 innerDescription={repo.description}
