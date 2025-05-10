@@ -6,8 +6,8 @@ import Image from "next/image";
 import { fetchUserProfile } from "@/services/github";
 import Loading from "@/app/loading";
 
-export default async function Header({ gitHubUserName }) {
-  const profileData = await fetchUserProfile(gitHubUserName);
+export default async function Header() {
+  const profileData = await fetchUserProfile();
 
   if (!profileData) return <Loading />;
 

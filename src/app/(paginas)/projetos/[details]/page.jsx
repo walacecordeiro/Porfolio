@@ -1,51 +1,29 @@
-// "use client";
+import { fetchReadmeRepo } from "@/services/github";
+import { notFound } from "next/navigation";
+import { SectionSticky } from "@/components/_components/SectionSticky";
+import { removeCaracteres } from "@/app/utils/shortFunctions";
 
-// import Image from "next/image";
-// import { data } from "../data";
-// import { useRouter } from "next/navigation";
+export default async function Page({ params }) {
+  let README;
 
-// import {
-//  Carousel,
-//  CarouselContent,
-//  CarouselItem,
-//  CarouselNext,
-//  CarouselPrevious,
-// } from "@/components/ui/carousel";
-// import { SectionSticky } from "@/components/_components/SectionSticky";
+  try {
+    README = await fetchReadmeRepo(params.details);
+  } catch {
+    notFound();
+  }
 
-// export default function Page({ params }) {
-//  const router = useRouter();
-//  const project = data.find((project) => project.href.includes(params.details));
-
-//  if (!data.some((item) => item.href.includes(params.details))) {
-//   router.push("/404");
-//   return null;
-//  }
-
-//  return (
-//   <SectionSticky titleStickyOnMobile={project && project.innerTitle} normalCase>
-//    <Carousel>
-//     <CarouselContent>
-//      {project.images.map((image) => (
-//       <CarouselItem key={image} className="flex basis-5/6 lg:basis-full">
-//        <Image
-//         priority
-//         width={800}
-//         height={800}
-//         src={image}
-//         alt="Imagem do projeto"
-//         className="rounded border-2 border-slate-200/30 transition-all group-hover:border-slate-200/30"
-//        />
-//       </CarouselItem>
-//      ))}
-//     </CarouselContent>
-//     <CarouselPrevious className="hidden text-primary bg-black/60 transition-all lg:-left-12 lg:grid lg:hover:scale-125" />
-//     <CarouselNext className="hidden text-primary bg-black/60  transition-all lg:-right-12 lg:grid lg:hover:scale-125" />
-//    </Carousel>
-//    <h2 className="hidden mt-3 text-md font-medium tracking-tight text-slate-200 sm:text-xl lg:block">
-//     {project.innerTitle}
-//    </h2>
-//    <p className="mt-2 text-sm leading-normal">{project.innerDescription}</p>
-//   </SectionSticky>
-//  );
-// }
+  return (
+    <SectionSticky
+      title={removeCaracteres(params.details, ["_", "-", "."])}
+      className="w-full"
+    >
+      <div className="group relative transition-all lg:opacity-50 lg:hover:!opacity-100 lg:hover:!scale-[1.03] lg:my-16">
+        <div className="absolute -inset-x-4 -inset-y-4 -z-10 hidden rounded-lg transition-all motion-reduce:transition-none lg:-inset-x-11 lg:block lg:group-hover:bg-background/50 lg:group-hover:border-x-2 lg:group-hover:border-primary/10"></div>
+        <div
+          className="markdown-body bg-transparent text-sm text-black_white lg:text-base pointer-events-none"
+          dangerouslySetInnerHTML={{ __html: README }}
+        />
+      </div>
+    </SectionSticky>
+  );
+}

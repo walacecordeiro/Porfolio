@@ -38,8 +38,7 @@ export default function Card({
               href === "" && "cursor-default"
             } flex items-baseline font-medium leading-tight text-black_white transition-all hover:text-primary focus-visible:text-black_white group/link text-base`}
             href={href}
-            scroll={false}
-            target="blank"
+            // scroll={false}
           >
             <div className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></div>
             <span className="w-full">
