@@ -14,7 +14,7 @@ export default function ItemListLink({ innerText, href }) {
    {href === "/" ? (
     <li>
      <Link
-      scroll={false}
+    //   scroll={false}
       className="group flex items-center py-3 lg:w-fit"
       href={href}
       onClick={handleCloseSheet}
@@ -36,7 +36,7 @@ export default function ItemListLink({ innerText, href }) {
    ) : (
     <li>
      <Link
-      scroll={false}
+    //   scroll={false}
       className="group flex items-center py-3 lg:w-fit"
       href={href}
       onClick={handleCloseSheet}

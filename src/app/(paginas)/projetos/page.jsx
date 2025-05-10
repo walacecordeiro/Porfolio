@@ -11,21 +11,18 @@ export default async function ProjectsPage() {
   return (
     <SectionSticky title="Projetos públicos" className="lg:pt-14">
       <ul className="group/list">
-        {profileRepos
-          .filter((repo) => (repo.description != null) & (repo.private != true))
-          .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
-          .map((repo) => {
-            return (
-              <Card
-                key={repo.id}
-                href={`/projetos/${repo.name}`}
-                innerDate={formatDate(repo.pushed_at)}
-                innerTitle={removeCaracteres(repo.name, ["_", "-", "."])}
-                innerDescription={repo.description}
-                tags={repo.topics}
-              />
-            );
-          })}
+        {profileRepos.map((repo) => {
+          return (
+            <Card
+              key={repo.id}
+              href={`/projetos/${repo.name}`}
+              innerDate={formatDate(repo.pushed_at)}
+              innerTitle={removeCaracteres(repo.name, ["_", "-", "."])}
+              innerDescription={repo.description}
+              tags={repo.topics}
+            />
+          );
+        })}
       </ul>
       <TextLink
         innerText="Ver repositórios no GitHub"

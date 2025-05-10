@@ -2,8 +2,6 @@ const GITHUB_API_URL = "https://api.github.com";
 const TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 const USER_NAME = process.env.NEXT_PUBLIC_GITHUB_USER;
 
-import { marked } from "marked";
-
 // Função para buscar meus dados
 export const fetchUserProfile = async () => {
   const response = await fetch(`${GITHUB_API_URL}/users/${USER_NAME}`, {
@@ -24,7 +22,20 @@ export const fetchUserRepos = async () => {
   });
   if (!response.ok)
     throw new console.log("Erro ao buscar repositórios do GitHub");
-  return await response.json();
+
+  const data = await response.json();
+
+  // Filtra os repositórios como desejar
+  const filters = data
+    .filter(
+      (repo) =>
+        (repo.description != null) &
+        (repo.private != true) &
+        (repo.name != `${USER_NAME}`)
+    )
+    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)); // Organiza por ordem de push
+
+  return await filters;
 };
 
 export const fetchReadmeRepo = async (reponame) => {
@@ -49,6 +60,7 @@ export const fetchReadmeRepo = async (reponame) => {
     },
     body: JSON.stringify({
       text: markdown,
+      mode: "gfm",
       context: `${USER_NAME}/${reponame}"`,
     }),
   });
@@ -56,5 +68,6 @@ export const fetchReadmeRepo = async (reponame) => {
   if (!resHtml.ok) throw new Error("Erro ao converter Markdown");
 
   const html = await resHtml.text();
+
   return html;
 };
