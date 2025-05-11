@@ -30,7 +30,6 @@ Este projeto é um site de portfólio pessoal desenvolvido com `React e Next.js`
 ![Next.js](https://img.shields.io/badge/-Next.js-333333?style=flat&logo=next.js)
 ![Tailwind_css](https://img.shields.io/badge/-Tailwind_CSS-333333?style=flat&logo=tailwindcss)
 
-<br>
 
 ## Clone e use como Template
 
@@ -62,7 +61,7 @@ Este projeto utiliza variáveis de ambiente, armazenadas no arquivo `.env.local`
 6. Clique em **Generate new token**.
 7. Dê um nome ao seu token, defina a data de expiração e selecione os escopos desejados (as permissões que deseja conceder).
 8. Clique em **Generate token** e copie o token gerado (lembre-se de guardá-lo em um lugar seguro, pois não será possível vê-lo novamente).
-9. Por fim, crie um arquivo `.env.local` na raiz do projeto e defina sua variável de ambiente:
+9. Por fim, crie um arquivo `.env.local` na raiz do projeto e defina suas variáveis de ambiente:
 
    ```dotenv
    NEXT_PUBLIC_GITHUB_TOKEN=seu_token_do_github_aqui
@@ -83,7 +82,6 @@ Este projeto utiliza variáveis de ambiente, armazenadas no arquivo `.env.local`
 
 6. Acesse o site em [http://localhost:3000](http://localhost:3000).
 
-<br>
 
 ## Contato
 
@@ -92,7 +90,6 @@ Para dúvidas ou sugestões, entre em contato:
 - Email: walacecordeirodossantos@gmail.com
 - LinkedIn: [walace-cordeiro-dos-santos](https://www.linkedin.com/in/walace-cordeiro-dos-santos/)
 
-<br>
 
 ## Licença
 
