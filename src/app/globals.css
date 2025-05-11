@@ -6,11 +6,11 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover-foreground: 222 47% 11%;
     --primary: 262.1 83.3% 57.8%;
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
@@ -38,11 +38,11 @@
   }
 
   .dark {
-    --background: 224 71.4% 4.1%;
+    --background: 222 47% 11%;
     --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
+    --card: 222 47% 11%;
     --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 20% 98%;
     --primary: 171 77% 64%;
     --primary-foreground: 210 20% 98%;
@@ -72,6 +72,48 @@
     --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
   }
 }
+
+
+
+
+/* ===== Markdown - Readme.md do GitHub CSS ===== */
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  text-align: start;
+  border: none;
+  color: hsl(var(--primary));
+}
+
+.markdown-body a{
+  pointer-events: none;
+  color: hsl(var(--primary));
+}
+
+.markdown-body ul, .markdown-body ol{
+  list-style: circle;
+}
+
+.markdown-body code.notranslate{
+  background-color: hsla(0, 0%, 0%, 0.5);
+  padding: 5px;
+}
+
+.markdown-body blockquote{
+  background-color: hsla(0, 0%, 0%, 0.7);
+  border-left: 2px solid hsl(var(--primary));
+  border-radius: 0 var(--radius) var(--radius) 0;
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+}
+
+.markdown-body pre.notranslate{
+  background-color: hsla(0, 0%, 0%, 0.8);
+  color: white;
+}
+
+
+
 
 /* ===== Scrollbar CSS ===== */
 
