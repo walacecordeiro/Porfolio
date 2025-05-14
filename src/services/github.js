@@ -34,9 +34,35 @@ export const fetchUserRepos = async () => {
     )
     .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)); // Organiza por ordem de push
 
-  console.log(data)
-
   return await filters;
+};
+
+// Requisição para detalhes do repositório, usado na rota dinâmica, necessário todos ao mesmo tempo.
+export const fetchAllContentRepo = async (projectRepoName) => {
+  // Conteúdo overview do repositório
+  const infoRepo = await fetchInfoRepo(projectRepoName);
+
+  // Arquivos internos do repositório
+  const files = await fetchInternFilesRepo(projectRepoName);
+
+  // Conteúdo do README.md do repositório
+  const endpointReadme = await files
+    .filter((prop) => prop.name.toLowerCase() == "readme.md")
+    .map((prop) => prop.download_url);
+
+  let readmeContent = null;
+  if (endpointReadme) {
+    readmeContent = await fetchReadmeRepo(endpointReadme, projectRepoName);
+  }
+
+  // Retorno de tudo
+  const data = {
+    infoRepo,
+    internFiles: files,
+    readmeContent,
+  };
+
+  return data;
 };
 
 // Função de requisição que depende da fetchAllContentRepo()
@@ -104,33 +130,3 @@ const fetchReadmeRepo = async (endpointReadme, reponame) => {
 
   return html;
 };
-
-// Requisição para detalhes do repositório, usado na rota dinâmica, necessário todos ao mesmo tempo.
-export const fetchAllContentRepo = async (projectRepoName) => {
-  // Conteúdo overview do repositório
-  const infoRepo = await fetchInfoRepo(projectRepoName);
-  
-  // Arquivos internos do repositório
-  const files = await fetchInternFilesRepo(projectRepoName);
-
-  // Conteúdo do README.md do repositório
-  const endpointReadme = await files
-    .filter((prop) => prop.name.toLowerCase() == "readme.md")
-    .map((prop) => prop.download_url);
-
-  let readmeContent = null;
-  if (endpointReadme) {
-    readmeContent = await fetchReadmeRepo(endpointReadme, projectRepoName);
-  }
-
-  // Retorno de tudo
-  const data = {
-    infoRepo,
-    internFiles: files,
-    readmeContent,
-  };
-
-  return data;
-};
-
-

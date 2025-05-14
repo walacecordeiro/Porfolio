@@ -9,13 +9,9 @@ export default async function Page({ params }) {
   try {
     CONTENT = await fetchAllContentRepo(params.details);
   } catch (error) {
-    console.error("Erro ao buscar conteúdo: ", error);
+    // console.error("Erro ao buscar conteúdo: ", error);
     notFound();
   }
-
-  // const infoRepo = CONTENT.infoRepo;
-
-  // console.log(infoRepo);
 
   return (
     <SectionSticky
