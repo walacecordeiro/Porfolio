@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Loading from "@/app/loading";
 
 export default function SafeImage({ src, ...props }) {
   const [exists, setExists] = useState(null);
@@ -22,7 +21,7 @@ export default function SafeImage({ src, ...props }) {
     };
   }, [src]);
 
-  if (exists === null) return <Loading />; // ou um skeleton/loading se quiser
+  if (exists === null) return <p>Verificando se tem imagem...</p>; // ou um skeleton/loading se quiser
   if (!exists) return null; // ou um fallback
 
   return <Image src={src} alt={props.alt} {...props} />;

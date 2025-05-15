@@ -36,7 +36,7 @@ export default function Card({
               width={500}
               height={500}
               alt="Pequena imagem do projeto"
-              className="w-full self-center relative rounded border-2 border-slate-200/10 transition-all group-hover:border-slate-200/30"
+              className="w-full object-cover self-center relative rounded-xl ring-2 ring-primary/10 transition-all group-hover:ring-primary/80 sm:h-14"
             />
           </div>
         )}
