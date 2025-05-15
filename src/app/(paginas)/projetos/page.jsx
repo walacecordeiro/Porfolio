@@ -5,6 +5,8 @@ import { GoProjectSymlink } from "react-icons/go";
 import { fetchUserRepos } from "@/services/github";
 import { formatDate, removeCaracteres } from "../../utils/shortFunctions";
 
+const USER_NAME = process.env.NEXT_PUBLIC_GITHUB_USER;
+
 export default async function ProjectsPage() {
   const profileRepos = await fetchUserRepos();
 
@@ -17,6 +19,7 @@ export default async function ProjectsPage() {
               key={repo.id}
               href={`/projetos/${repo.name}`}
               innerDate={formatDate(repo.pushed_at)}
+              innerImage={`https://raw.githubusercontent.com/${USER_NAME}/${repo.name}/main/.github/preview.png`}
               innerTitle={removeCaracteres(repo.name, ["_", "-", "."])}
               innerDescription={repo.description}
               tags={repo.topics}

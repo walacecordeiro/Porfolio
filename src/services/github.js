@@ -55,19 +55,6 @@ export const fetchAllContentRepo = async (projectRepoName) => {
     readmeContent = await fetchReadmeRepo(endpointReadme, projectRepoName);
   }
 
-  let blobImageSha = null;
-  const endpointImagePreview = await files.find(
-    (file) => file.name.toLowerCase() === "readme.md"
-  );
-
-  if (endpointImagePreview) {
-    blobImageSha = await fetchImagePreviewReadme(
-      projectRepoName,
-      endpointImagePreview.sha
-    );
-    console.log(endpointImagePreview);
-  }
-
   // console.log(await endpointImagePreview);
 
   // Retorno de tudo
@@ -75,7 +62,6 @@ export const fetchAllContentRepo = async (projectRepoName) => {
     infoRepo,
     internFiles: files,
     readmeContent,
-    blobImageSha,
   };
 
   return data;
@@ -93,27 +79,6 @@ const fetchInfoRepo = async (reponame) => {
   );
 
   if (!response.ok) throw new Error("Erro ao buscar conteúdo do projeto");
-
-  return await response.json();
-};
-
-const fetchImagePreviewReadme = async (reponame, file_sha) => {
-  const teste = `https://raw.githubusercontent.com/${USER_NAME}/${reponame}/main/.github/preview.png
-  `;
-  const response = await fetch(
-    `${GITHUB_API_URL}/repos/${USER_NAME}/${reponame}/git/blobs/${file_sha}`,
-    {
-      headers: {
-        owner: `${USER_NAME}`,
-        repo: `${reponame}`,
-        file_sha: `${file_sha}`,
-        Authorization: `token ${TOKEN}`,
-        "X-GitHub-Api-Version": "2022-11-28",
-      },
-    }
-  );
-
-  if (!response.ok) throw new Error("Erro ao buscar imagem de preview");
 
   return await response.json();
 };

@@ -1,30 +1,26 @@
 "use client";
 
+const USER_NAME = process.env.NEXT_PUBLIC_GITHUB_USER;
+
 import { useEffect } from "react";
 
-export default function MarkdownComponent({ targetContent, sha_images }) {
+export default function MarkdownComponent({ targetContent, projectRepoName }) {
   useEffect(() => {
-    const divs = document.getElementsByTagName("img");
-    for (let i = 0; i < divs.length; i++) {
-      if (divs[i].src.includes("/projetos/")) {
-        divs[
+    const imgs = document.getElementsByTagName("img");
+    for (let i = 0; i < imgs.length; i++) {
+      if (imgs[i].src.includes("/.github")) {
+        imgs[
           i
-        ].src = `https://raw.githubusercontent.com/walacecordeiro/Porfolio/main/.github/preview.png
-        `;
-        console.log("Sim tem");
-      } else {
-        console.log("Não tem");
+        ].src = `https://raw.githubusercontent.com/${USER_NAME}/${projectRepoName}/main/.github/preview.png`;
+        imgs[i].style = "border-radius: 3px;";
       }
-      divs[i].style.backgroundColor = "red";
     }
-  }, []);
+  }, [projectRepoName]);
 
   return (
-    <>
-      <div
-        className="markdown-body bg-transparent text-sm text-black_white lg:text-base"
-        dangerouslySetInnerHTML={{ __html: targetContent }}
-      />
-    </>
+    <div
+      className="markdown-body bg-transparent text-sm text-black_white lg:text-base"
+      dangerouslySetInnerHTML={{ __html: targetContent }}
+    />
   );
 }

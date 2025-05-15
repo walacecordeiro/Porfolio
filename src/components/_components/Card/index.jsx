@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Tag from "../Tag/tag";
 import { Paragraph } from "../Paragraph";
+import SafeImage from "./SafeImage";
 
 export default function Card({
   href,
   innerDate,
+  innerImage,
   innerTitle,
   innerSubTitle,
   innerDescription,
@@ -27,8 +29,15 @@ export default function Card({
         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-lg transition-all motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-background/50"></div>
 
         {innerDate && (
-          <div className="z-10 text-xs font-semibold text-paragraph sm:col-span-2">
+          <div className="flex flex-col gap-4 z-10 text-xs font-semibold text-paragraph sm:col-span-2">
             {innerDate}
+            <SafeImage
+              src={innerImage}
+              width={500}
+              height={500}
+              alt="Pequena imagem do projeto"
+              className="w-full self-center relative rounded border-2 border-slate-200/10 transition-all group-hover:border-slate-200/30"
+            />
           </div>
         )}
 
@@ -46,7 +55,9 @@ export default function Card({
                 {innerTitle}
               </div>
               {innerSubTitle && (
-                <p className="text-black_white-foreground pb-2">{innerSubTitle}</p>
+                <p className="text-black_white-foreground pb-2">
+                  {innerSubTitle}
+                </p>
               )}
             </span>
           </Link>
