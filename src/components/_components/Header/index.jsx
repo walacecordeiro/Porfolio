@@ -22,7 +22,7 @@ export default async function Header() {
           width={120}
           height={0}
           alt="Pequena imagem do projeto"
-          className="h-fit rounded-full"
+          className="h-fit rounded-full border-2 border-primary/50 shadow-md"
         />
         <div className="flex flex-col justify-center items-center md:items-start">
           <h1 className="text-4xl font-bold tracking-tight text-black_white sm:text-3xl">

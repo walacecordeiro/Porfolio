@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FaFilePdf } from "react-icons/fa6";
+import { RiExternalLinkFill } from "react-icons/ri";
 
 export default function ButtonPrimary({
   innerText,
@@ -7,12 +8,14 @@ export default function ButtonPrimary({
   eventClick,
   className,
   pdfDownload,
+  url,
 }) {
   return (
     <a
-      href={pdfDownload}
+      href={url ? url : pdfDownload}
+      target={url && "blank"}
       download
-      className={`before:block before:absolute before:-inset-0 before:-skew-x-0 before:rounded-md before:opacity-0 before:hover:opacity-100 before:border before:border-primary relative inline-block before:transition-all before:hover:translate-x-1 before:hover:translate-y-1 before:${className}`}
+      className={`before:block before:absolute before:-inset-0 before:-skew-x-0 before:rounded-md before:opacity-0 before:hover:opacity-100 before:border before:border-primary relative inline-block before:transition-all before:hover:translate-x-1 before:hover:translate-y-1`}
     >
       <Button
         type={type}
@@ -21,6 +24,7 @@ export default function ButtonPrimary({
       >
         {pdfDownload ? <FaFilePdf /> : ""}
         {innerText}
+        {url ? <RiExternalLinkFill /> : ""}
       </Button>
     </a>
   );
