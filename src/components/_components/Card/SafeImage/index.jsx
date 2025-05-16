@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function SafeImage({ src, href, ...props }) {
@@ -27,7 +27,7 @@ export default function SafeImage({ src, href, ...props }) {
 
   return (
     <Link href={href}>
-      <Image src={src} alt={props.alt} {...props} />
+      <img src={src} alt={props.alt} {...props} />
     </Link>
   );
 }
