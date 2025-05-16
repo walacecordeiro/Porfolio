@@ -27,11 +27,17 @@ export default async function Page({ params }) {
           projectRepoName={params.details}
         />
       </div>
+
       {CONTENT.infoRepo.homepage && (
-        <div className="flex gap-4 w-fit self-end justify-self-end sticky bottom-4 transition-all lg:flex-row lg:opacity-0 lg:group-hover:opacity-100 mt-5">
+        <div className="flex flex-col items-end gap-4 w-fit self-end justify-self-end sticky bottom-4 transition-all sm:flex-row lg:opacity-0 lg:group-hover:opacity-100 mt-5">
           <ButtonPrimary
             innerText="Demo"
             url={CONTENT.infoRepo.homepage}
+            className="bg-black px-7 py-1 ring-1 ring-primary/10 hover:ring-transparent"
+          />
+          <ButtonPrimary
+            innerText="Repositório"
+            url={CONTENT.infoRepo.html_url}
             className="bg-black px-7 py-1 ring-1 ring-primary/10 hover:ring-transparent"
           />
         </div>

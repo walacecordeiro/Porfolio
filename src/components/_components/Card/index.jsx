@@ -33,6 +33,7 @@ export default function Card({
             {innerDate}
             <SafeImage
               src={innerImage}
+              href={href}
               width={500}
               height={500}
               alt="Pequena imagem do projeto"

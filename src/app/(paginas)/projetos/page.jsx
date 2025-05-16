@@ -11,7 +11,7 @@ export default async function ProjectsPage() {
   const profileRepos = await fetchUserRepos();
 
   return (
-    <SectionSticky title="Projetos públicos" className="lg:pt-14">
+    <SectionSticky title="Push's recentes" className="lg:pt-14">
       <ul className="group/list">
         {profileRepos.map((repo) => {
           return (

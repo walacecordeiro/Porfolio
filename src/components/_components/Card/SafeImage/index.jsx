@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function SafeImage({ src, ...props }) {
+export default function SafeImage({ src, href, ...props }) {
   const [exists, setExists] = useState(null);
 
   useEffect(() => {
@@ -24,5 +25,9 @@ export default function SafeImage({ src, ...props }) {
   if (exists === null) return <p>Verificando se tem imagem...</p>; // ou um skeleton/loading se quiser
   if (!exists) return null; // ou um fallback
 
-  return <Image src={src} alt={props.alt} {...props} />;
+  return (
+    <Link href={href}>
+      <Image src={src} alt={props.alt} {...props} />
+    </Link>
+  );
 }

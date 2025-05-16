@@ -2,8 +2,6 @@ import Card from "@/components/_components/Card";
 import { SectionSticky } from "@/components/_components/SectionSticky";
 import { data } from "./data";
 
-// import {} from "@/../.github"
-
 export default async function formationPage() {
   return (
     <SectionSticky title="Formação" className="lg:pt-14">
